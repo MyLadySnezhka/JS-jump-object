@@ -1,0 +1,28 @@
+.wrap {
+    width: 1200px;
+    min-height: 800px;
+    margin: 20px auto;
+}
+
+.board {
+    // width: 1200px;
+    // height: 800px;
+    margin-top: 20px;
+    background-color: bisque;
+    border: 3px double blue;
+    position: relative;
+}
+
+.packman {
+    border: 1xp solid #000;
+    border-radius: 999px;
+    background-color: blueviolet;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+}
+
+.warn {
+    margin-top: 50px;
+    font-size: 40px;
+}
