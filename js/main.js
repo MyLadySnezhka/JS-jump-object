@@ -10,7 +10,7 @@ elPlayBoard.style.height = `800px`;
 const coord = () => {
     X = parseInt(Math.random(10000)*1000);
     Y = parseInt(Math.random(10000)*1000);
-    return (X, Y);
+    //return (X, Y);
 }
 
 const maxX = parseInt(elPlayBoard.style.width) - 100;
