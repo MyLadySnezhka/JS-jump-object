@@ -8,9 +8,8 @@ elPlayBoard.style.width = `1200px`;
 elPlayBoard.style.height = `800px`;
 
 const coord = () => {
-    X = parseInt(Math.random()*1200) - 100;
-    Y = parseInt(Math.random()*800) - 100;
-    //return (X, Y);
+    X = parseInt(Math.random()*(1200-100));
+    Y = parseInt(Math.random()*(800-100));
 }
 
 //const maxX = parseInt(elPlayBoard.style.width) - 100;
@@ -22,10 +21,11 @@ elPack.addEventListener('click', () => {
     elPack.style.left = `${X}px`;          
     elPack.style.top = `${Y}px`;
     elPack.classList.add('packman');
+})
 
 
 //    if((X>0)&&(X<maxX)&&(Y>0)&&(Y<maxY)) {
-//        elWarn.innerHTML = '';
+//            elWarn.innerHTML = '';
 //            elPack.style.left = `${X}px`;
 //            elPack.style.top = `${Y}px`;
 //            elPack.classList.add('packman');
@@ -36,4 +36,3 @@ elPack.addEventListener('click', () => {
 //        elPack.style.top = `${maxY/2}px`;
 //        elPack.classList.add('packman');
 //    }
-})
