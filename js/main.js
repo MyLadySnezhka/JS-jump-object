@@ -19,8 +19,8 @@ const maxY = parseInt(elPlayBoard.style.height) - 100;
 elPack.addEventListener('click', () => {
     elPack.classList.remove('packman');
     coord();
-    //console.log (X, Y);
     if((X>0)&&(X<maxX)&&(Y>0)&&(Y<maxY)) {
+        elWarn.innerHTML = '';
             elPack.style.left = `${X}px`;
             elPack.style.top = `${Y}px`;
             elPack.classList.add('packman');
