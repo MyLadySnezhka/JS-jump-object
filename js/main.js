@@ -1,19 +1,25 @@
 const elPack = document.querySelector('.packman');
 const elPlayBoard = document.querySelector('.board');
-const elWarn = document.querySelector('.warn');
 
 let X, Y;
 
+// похідні дані, можна запропонувати їх дати обирати користувачеві 
+//(тоді ще додати перевірку, щоб розмір елемента не міг бути більше, ніж розмір дошки)
+
+//розмір дошки
 elPlayBoard.style.width = `1200px`;
 elPlayBoard.style.height = `800px`;
+//розмір ігрового елемента
+elPack.style.width = `100px`;
+elPack.style.height = `100px`;
+
+const maxX = parseInt(elPlayBoard.style.width) - parseInt(elPack.style.width);
+const maxY = parseInt(elPlayBoard.style.height) - parseInt(elPack.style.height);
 
 const coord = () => {
-    X = parseInt(Math.random()*(1200-100));
-    Y = parseInt(Math.random()*(800-100));
+    X = parseInt(Math.random()*maxX);
+    Y = parseInt(Math.random()*maxY);
 }
-
-//const maxX = parseInt(elPlayBoard.style.width) - 100;
-//const maxY = parseInt(elPlayBoard.style.height) - 100;
 
 elPack.addEventListener('click', () => {
     elPack.classList.remove('packman');
