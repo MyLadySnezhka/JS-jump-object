@@ -26,7 +26,7 @@ const maxY = parseInt(elPlayBoard.style.height) - parseInt(elPack.style.height);
 const maxHouseX = parseInt(elPlayBoard.style.width) - parseInt(elHouse.style.width);
 const maxHouseY = parseInt(elPlayBoard.style.height) - parseInt(elHouse.style.height);
 
-const coord = () => {
+const coordItem = () => {
     X = parseInt(Math.random()*maxX);
     Y = parseInt(Math.random()*maxY);
 }
@@ -38,21 +38,25 @@ const coordHouse = (lnkHouse) => {
     lnkHouse.style.top = `${houseY}px`;
 }
 
+const renderItem = (lnkItem) => {
+    lnkItem.classList.remove('packman');
+    coordItem();
+    //console.log('dog', X, Y);
+    lnkItem.style.left = `${X}px`;          
+    lnkItem.style.top = `${Y}px`;
+    lnkItem.classList.add('packman');
+}
+
 coordHouse(elHouse);
-console.log('house', houseX, houseY);
+//console.log('house', houseX, houseY);
 
 elPack.addEventListener('click', (ev) => {
-    elPack.classList.remove('packman');
-    coord();
-    console.log('dog', X, Y);
-    elPack.style.left = `${X}px`;          
-    elPack.style.top = `${Y}px`;
-    elPack.classList.add('packman');
-        if((X>=houseX-50)&&(X<=houseX+100)&&(Y>=houseY-50)&&(Y<=houseY+120)) {
-            elHelloText.innerHTML = `<h1>Вітаю, цуценя вдома!</h1><h2>Якщо хочеш зіграти ще, натисни F5.</h2>`;
-            elPack.removeEventListener('click', (ev));
-            return;
-        }
+    renderItem(elPack);
+    if((X>=houseX-50)&&(X<=houseX+100)&&(Y>=houseY-50)&&(Y<=houseY+120)) {
+        elHelloText.innerHTML = `<h1>Вітаю, цуценя вдома!</h1><h2>Якщо хочеш зіграти ще, натисни F5.</h2>`;
+        elPack.removeEventListener('click', (ev));
+        return;
+    }
 })
 
 
