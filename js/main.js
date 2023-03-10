@@ -49,7 +49,7 @@ elPack.addEventListener('click', (ev) => {
     elPack.style.top = `${Y}px`;
     elPack.classList.add('packman');
         if((X>=houseX-50)&&(X<=houseX+100)&&(Y>=houseY-50)&&(Y<=houseY+120)) {
-            elEndText.innerHTML = `<h2>Вітаю, цуценя вдома!</h2><h3>Якщо хочеш зіграти ще, натисни F5.</h3>`;
+            elHelloText.innerHTML = `<h1>Вітаю, цуценя вдома!</h1><h2>Якщо хочеш зіграти ще, натисни F5.</h2>`;
             elPack.removeEventListener('click', (ev));
             return;
         }
