@@ -2,7 +2,6 @@ const elPack = document.querySelector('.packman');
 const elPlayBoard = document.querySelector('.board');
 const elHouse = document.querySelector('.house');
 const elHelloText = document.querySelector('.hello');
-const elEndText = document.querySelector('.gameover');
 
 let X, Y;
 let houseX, houseY;
@@ -44,6 +43,8 @@ const renderItem = (lnkItem) => {
     //console.log('dog', X, Y);
     lnkItem.style.left = `${X}px`;          
     lnkItem.style.top = `${Y}px`;
+    //або можна ще так:
+    //lnkItem.style.transform = `translate(${X}px, ${Y}px)`;
     lnkItem.classList.add('packman');
 }
 
@@ -53,7 +54,7 @@ coordHouse(elHouse);
 const game = () => {
     renderItem(elPack);
     if((X>=houseX-50)&&(X<=houseX+80)&&(Y>=houseY-50)&&(Y<=houseY+120)) {
-        elHelloText.innerHTML = `<h1>Вітаю, цуценя вдома!</h1><h2>Якщо хочеш зіграти ще, натисни F5.</h2>`;
+        elHelloText.innerHTML = `<h1>Вітаю, цуценя вдома!</h1><h2>Якщо хочеш зіграти ще, онови сторінку.</h2>`;
         elPack.removeEventListener('click', game);
     }
 }
@@ -61,16 +62,3 @@ const game = () => {
 elPack.addEventListener('click', game);
 
 
-
-//    if((X>0)&&(X<maxX)&&(Y>0)&&(Y<maxY)) {
-//            elWarn.innerHTML = '';
-//            elPack.style.left = `${X}px`;
-//            elPack.style.top = `${Y}px`;
-//            elPack.classList.add('packman');
-//        }
-//    else {
-//        elWarn.innerHTML = 'Вийшов за поле! Спробуй ще!'
-//        elPack.style.left = `${maxX/2}px`;
-//        elPack.style.top = `${maxY/2}px`;
-//        elPack.classList.add('packman');
-//    }
