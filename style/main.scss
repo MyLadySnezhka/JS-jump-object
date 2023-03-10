@@ -6,7 +6,7 @@
 
 .board {
     margin-top: 20px;
-    background-color: bisque;
+    background-color: rgb(5, 137, 22);
     border: 3px double blue;
     position: relative;
 }
@@ -16,6 +16,11 @@
     border-radius: 999px;
     //background-color: blueviolet;
     background-image: url(../images/dog.png);
+    position: absolute;
+}
+
+.house {
+    background-image: url(../images/dog-house.png);
     position: absolute;
 }
 
