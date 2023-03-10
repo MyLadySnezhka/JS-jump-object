@@ -50,14 +50,16 @@ const renderItem = (lnkItem) => {
 coordHouse(elHouse);
 //console.log('house', houseX, houseY);
 
-elPack.addEventListener('click', (ev) => {
+const game = () => {
     renderItem(elPack);
     if((X>=houseX-50)&&(X<=houseX+100)&&(Y>=houseY-50)&&(Y<=houseY+120)) {
         elHelloText.innerHTML = `<h1>Вітаю, цуценя вдома!</h1><h2>Якщо хочеш зіграти ще, натисни F5.</h2>`;
-        elPack.removeEventListener('click', (ev));
-        return;
+        elPack.removeEventListener('click', game);
     }
-})
+}
+
+elPack.addEventListener('click', game);
+
 
 
 //    if((X>0)&&(X<maxX)&&(Y>0)&&(Y<maxY)) {
