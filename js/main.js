@@ -19,11 +19,21 @@ elPack.style.height = `150px`;
 elHouse.style.width = `200px`;
 elHouse.style.height = `200px`;
 
+//ще розмір діва можна визначити так:
+console.log(elPlayBoard.clientHeight);
+
 const maxX = parseInt(elPlayBoard.style.width) - parseInt(elPack.style.width);
 const maxY = parseInt(elPlayBoard.style.height) - parseInt(elPack.style.height);
 
 const maxHouseX = parseInt(elPlayBoard.style.width) - parseInt(elHouse.style.width);
 const maxHouseY = parseInt(elPlayBoard.style.height) - parseInt(elHouse.style.height);
+
+//parseInt перетворює строку в число, наприклад 12px в 12
+
+//Виділення цілої частини:
+//Math.round() (округлити) до найближчого цілого
+//Math.ceil() - округлює число до найближчого більшого цілого
+//Math.floor() - округлення до меншого (вниз)
 
 const coordItem = () => {
     X = parseInt(Math.random()*maxX);
